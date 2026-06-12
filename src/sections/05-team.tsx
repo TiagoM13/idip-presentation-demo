@@ -1,3 +1,5 @@
+import { SectionTitle } from '../components/SectionTitle'
+
 /**
  * Section 05 — O time
  * Figma: node 1:10305 / instance 1:10307 (variant "05-01")
@@ -17,34 +19,15 @@ const STACK = [
 
 export function Team() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-ink">
-      {/* Background glow */}
-      <img
-        src="/assets/background/background-1.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      />
-
-      {/* Bottom perspective grid */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%] [perspective:600px]"
-      >
-        <div className="absolute inset-x-[-20%] bottom-0 top-0 origin-bottom [transform:rotateX(68deg)] [background-image:linear-gradient(to_right,rgba(120,160,190,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,160,190,0.12)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_top,#000,transparent)]" />
-      </div>
-
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Title */}
-      <div className="absolute inset-x-0 top-[clamp(40px,8vh,100px)] flex flex-col items-center gap-[clamp(10px,1.4vw,24px)] px-[5%] text-center">
-        <p className="bg-gradient-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
-          o time
-        </p>
-        <h2 className="font-bold leading-tight text-fog text-[clamp(28px,3.35vw,64px)]">
-          Time interno e multidisciplinar
-        </h2>
-        <p className="font-normal leading-snug text-fog/90 text-[clamp(15px,1.5vw,28px)]">
-          Sem terceirização do core técnico
-        </p>
+      <div className="absolute inset-x-0 top-[clamp(40px,8vh,100px)] px-[5%]">
+        <SectionTitle
+          align="center"
+          label="o time"
+          title="Time interno e multidisciplinar"
+          subtitle="Sem terceirização do core técnico"
+        />
       </div>
 
       {/* Venn diagram */}
@@ -59,7 +42,7 @@ export function Team() {
         <div className="absolute right-0 top-1/2 aspect-square w-[58%] -translate-y-1/2 rounded-full border border-cyan-400/25 bg-[radial-gradient(closest-side,rgba(0,160,190,0.1),transparent)]" />
 
         {/* Labels */}
-        <p className="absolute left-1/2 top-[15%] -translate-x-1/2 bg-gradient-to-b from-brand-cyan to-brand-blue bg-clip-text text-center font-bold uppercase leading-tight text-transparent text-[clamp(10px,1.04vw,20px)]">
+        <p className="absolute left-1/2 top-[15%] -translate-x-1/2 bg-linear-to-b from-brand-cyan to-brand-blue bg-clip-text text-center font-bold uppercase leading-tight text-transparent text-[clamp(10px,1.04vw,20px)]">
           Desenvolvimento
         </p>
         <p className="absolute left-[7%] top-1/2 -translate-y-1/2 text-center font-bold uppercase leading-tight text-white text-[clamp(10px,1.04vw,20px)]">
@@ -82,7 +65,7 @@ export function Team() {
       {/* Connector line (Desenvolvimento → checklist) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-[55%] top-[44%] h-px w-[22%] bg-gradient-to-r from-brand-cyan/60 to-brand-cyan/0"
+        className="pointer-events-none absolute left-[55%] top-[44%] h-px w-[22%] bg-linear-to-r from-brand-cyan/60 to-brand-cyan/0"
       />
 
       {/* Tech checklist */}
@@ -96,11 +79,11 @@ export function Team() {
       </ul>
 
       {/* Pagination dots */}
-      <div className="absolute right-[1.6%] top-1/2 flex -translate-y-1/2 flex-col items-center gap-[14px]">
-        <span className="size-[10px] rounded-full bg-brand-cyan" />
-        <span className="size-[6px] rounded-full bg-fog/30" />
-        <span className="size-[6px] rounded-full bg-fog/30" />
-        <span className="size-[6px] rounded-full bg-fog/30" />
+      <div className="absolute right-[1.6%] top-1/2 flex -translate-y-1/2 flex-col items-center gap-3.5">
+        <span className="size-2.5 rounded-full bg-brand-cyan" />
+        <span className="size-1.5 rounded-full bg-fog/30" />
+        <span className="size-1.5 rounded-full bg-fog/30" />
+        <span className="size-1.5 rounded-full bg-fog/30" />
       </div>
     </section>
   )

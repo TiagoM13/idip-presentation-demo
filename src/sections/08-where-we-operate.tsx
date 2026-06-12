@@ -1,3 +1,6 @@
+import { SectionTitle } from '../components/SectionTitle'
+import { Pagination } from '../components/Pagination'
+
 /**
  * Section 08 — Onde atuamos
  * Figma: node 1:10316 (variant "08-01")
@@ -15,28 +18,15 @@ const SECTORS = [
 
 export function WhereWeOperate() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-ink">
-      {/* Bottom perspective grid */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[24%] [perspective:600px]"
-      >
-        <div className="absolute inset-x-[-20%] bottom-0 top-0 origin-bottom [transform:rotateX(68deg)] [background-image:linear-gradient(to_right,rgba(120,160,190,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,160,190,0.1)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_top,#000,transparent)]" />
-      </div>
-
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Heading (top-left) */}
       <div className="absolute left-[clamp(40px,5.2vw,100px)] top-[clamp(48px,16vh,200px)] w-[clamp(300px,30vw,460px)]">
-        <p className="bg-gradient-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
-          Onde atuamos
-        </p>
-        <h2 className="mt-[clamp(12px,1.4vw,24px)] font-bold leading-tight text-fog text-[clamp(30px,3.35vw,64px)]">
-          Software não pode ser genérico
-        </h2>
+        <SectionTitle label="Onde atuamos" title="Software não pode ser genérico" />
       </div>
 
       {/* Active sector (bottom-left) */}
       <div className="absolute bottom-[clamp(90px,16vh,200px)] left-[clamp(40px,5.2vw,100px)] w-[clamp(300px,30vw,440px)]">
-        <p className="bg-gradient-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
+        <p className="bg-linear-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
           Healthtech
         </p>
         <p className="mt-[clamp(12px,1.4vw,24px)] leading-snug text-fog text-[clamp(15px,1.5vw,28px)]">
@@ -46,12 +36,11 @@ export function WhereWeOperate() {
       </div>
 
       {/* Pagination dots (bottom-left) */}
-      <div className="absolute bottom-[clamp(40px,7vh,80px)] left-[clamp(40px,5.2vw,100px)] flex items-center gap-[16px]">
-        <span className="size-[10px] rounded-full bg-brand-cyan" />
-        {Array.from({ length: 5 }).map((_, i) => (
-          <span key={i} className="size-[6px] rounded-full bg-fog/30" />
-        ))}
-      </div>
+      <Pagination
+        count={6}
+        active={0}
+        className="absolute bottom-[clamp(40px,7vh,80px)] left-[clamp(40px,5.2vw,100px)]"
+      />
 
       {/* Ring + neon icon (center-right) */}
       <div

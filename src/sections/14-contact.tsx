@@ -43,7 +43,7 @@ const CONTACTS: ContactCard[] = [
 
 export function Contact() {
   return (
-    <section className="relative flex h-screen w-full flex-col overflow-hidden bg-ink">
+    <section className="relative flex h-screen w-full flex-col overflow-hidden">
       {/* Color glows: blue central band + teal edges (Figma) */}
       <div
         aria-hidden="true"
@@ -83,7 +83,7 @@ export function Contact() {
           rel="noreferrer"
           className="group"
         >
-          <h2 className="font-ubuntu font-bold leading-none text-fog text-[clamp(44px,6.5vw,110px)] transition-colors [text-shadow:0_0_40px_rgba(0,150,200,0.25)] group-hover:text-brand-cyan">
+          <h2 className="font-ubuntu font-bold leading-none text-fog text-[clamp(44px,6.5vw,110px)] transition-colors text-shadow-[0_0_40px_rgba(0,150,200,0.25)] group-hover:text-brand-cyan">
             Vamos conversar!
           </h2>
         </a>

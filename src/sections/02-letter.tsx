@@ -5,15 +5,7 @@
  */
 export function Letter() {
   return (
-    <section className="relative flex h-screen w-full items-center overflow-hidden bg-ink">
-      {/* Dark background with glow */}
-      <img
-        src="/assets/background/background-1.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      />
-
+    <section className="relative flex h-screen w-full items-center overflow-hidden">
       {/* IDIP symbol (outline) on the right */}
       <img
         src="/assets/logo/logo.png"

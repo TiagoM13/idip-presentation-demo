@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { SectionTitle } from '../components/SectionTitle'
 
 /**
  * Section 11 — Estrutura de entrega
@@ -66,7 +67,7 @@ export function DeliveryStructure() {
   }, [])
 
   return (
-    <section ref={ref} className="relative h-screen w-full overflow-hidden bg-ink">
+    <section ref={ref} className="relative h-screen w-full overflow-hidden">
       {/* Shared diamond gradient */}
       <svg aria-hidden="true" className="absolute size-0">
         <defs>
@@ -78,15 +79,18 @@ export function DeliveryStructure() {
       </svg>
 
       {/* Title */}
-      <div className="absolute inset-x-0 top-[clamp(40px,9vh,110px)] z-20 flex flex-col items-center gap-[clamp(10px,1.2vw,24px)] px-[5%] text-center">
-        <p className="bg-linear-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
-          Estrutura de entrega
-        </p>
-        <h2 className="font-bold leading-tight text-fog text-[clamp(30px,3.35vw,64px)]">
-          Do diagnóstico à
-          <br />
-          evolução contínua
-        </h2>
+      <div className="absolute inset-x-0 top-[clamp(40px,9vh,110px)] z-20 px-[5%]">
+        <SectionTitle
+          align="center"
+          label="Estrutura de entrega"
+          title={
+            <>
+              Do diagnóstico à
+              <br />
+              evolução contínua
+            </>
+          }
+        />
       </div>
 
       {/* Ambient glow (centred among the diamonds) */}

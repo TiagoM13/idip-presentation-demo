@@ -1,3 +1,5 @@
+import { SectionTitle } from '../components/SectionTitle'
+
 /**
  * Section 06 — Como trabalhamos
  * Figma: node 1:10310 (variant "06-02")
@@ -14,31 +16,26 @@ const PILLARS: { n: string; title: [string, string]; desc: string }[] = [
 
 export function HowWeWork() {
   return (
-    <section className="relative flex h-screen w-full flex-col overflow-hidden bg-ink">
+    <section className="relative flex h-screen w-full flex-col overflow-hidden">
       {/* Center glow behind cards */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_40%_at_50%_58%,rgba(0,120,170,0.16),transparent_70%)]"
       />
 
-      {/* Bottom perspective grid */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[26%] [perspective:600px]"
-      >
-        <div className="absolute inset-x-[-20%] bottom-0 top-0 origin-bottom [transform:rotateX(68deg)] [background-image:linear-gradient(to_right,rgba(120,160,190,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,160,190,0.1)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_top,#000,transparent)]" />
-      </div>
-
       {/* Title */}
-      <div className="relative z-10 flex flex-col items-center gap-[clamp(8px,1.2vw,20px)] px-[5%] pt-[clamp(36px,7vh,88px)] text-center">
-        <p className="bg-gradient-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
-          Como trabalhamos
-        </p>
-        <h2 className="font-bold leading-tight text-fog text-[clamp(26px,3.1vw,60px)]">
-          Cinco pilares aplicados em
-          <br />
-          todos os projetos
-        </h2>
+      <div className="relative z-10 px-[5%] pt-[clamp(36px,7vh,88px)]">
+        <SectionTitle
+          align="center"
+          label="Como trabalhamos"
+          title={
+            <>
+              Cinco pilares aplicados em
+              <br />
+              todos os projetos
+            </>
+          }
+        />
       </div>
 
       {/* Pillar cards */}

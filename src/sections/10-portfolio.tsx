@@ -1,3 +1,5 @@
+import { SectionTitle } from '../components/SectionTitle'
+
 /**
  * Section 10 — Portfólio
  * Figma: node 1:10322 (variant "10-…")
@@ -33,29 +35,17 @@ const CASES: { name: string; rest: string; desc: string; result: string }[] = [
 
 export function Portfolio() {
   return (
-    <section className="relative flex h-screen w-full items-start overflow-hidden bg-ink px-[clamp(40px,5.2vw,100px)] py-[clamp(48px,9vh,110px)]">
+    <section className="relative flex h-screen w-full items-start overflow-hidden px-[clamp(40px,5.2vw,100px)] py-[clamp(48px,9vh,110px)]">
       {/* Glow (left corner, below the title) */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute bottom-[6%] left-[-5%] aspect-square w-[clamp(240px,24vw,440px)] rounded-full bg-[radial-gradient(closest-side,rgba(0,120,180,0.24),transparent)]"
       />
-      {/* Bottom perspective grid */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[22%] [perspective:600px]"
-      >
-        <div className="absolute inset-x-[-20%] bottom-0 top-0 origin-bottom [transform:rotateX(68deg)] [background-image:linear-gradient(to_right,rgba(120,160,190,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,160,190,0.1)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_top,#000,transparent)]" />
-      </div>
 
       <div className="relative z-10 flex w-full items-start gap-[clamp(32px,5vw,100px)]">
         {/* Heading */}
         <div className="w-[clamp(240px,27vw,440px)] shrink-0">
-          <p className="bg-linear-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
-            Portfólio de cases
-          </p>
-          <h2 className="mt-[clamp(12px,1.4vw,24px)] font-bold leading-tight text-fog text-[clamp(30px,3.35vw,64px)]">
-            Outros projetos em destaque
-          </h2>
+          <SectionTitle label="Portfólio de cases" title="Outros projetos em destaque" />
         </div>
 
         {/* Cases grid 2×2 with cross dividers */}

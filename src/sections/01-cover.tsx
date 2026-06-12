@@ -7,16 +7,8 @@ export function Cover() {
   return (
     <section
       id="cover"
-      className="relative h-screen w-full overflow-hidden bg-ink-soft"
+      className="relative h-screen w-full overflow-hidden"
     >
-      {/* Background: dark gradient with blue glow (Figma background) */}
-      <img
-        src="/assets/background/background-1.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      />
-
       {/* Subtle top-center grid, fading at the edges */}
       <div
         aria-hidden="true"

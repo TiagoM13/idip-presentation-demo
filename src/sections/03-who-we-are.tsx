@@ -1,3 +1,5 @@
+import { SectionTitle } from '../components/SectionTitle'
+
 /**
  * Section 03 — Quem somos
  * Figma: node 1:10301 (variant "03-01")
@@ -5,7 +7,7 @@
  */
 export function WhoWeAre() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#0a0d12]">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Glowing orb (top-center) */}
       <div
         aria-hidden="true"
@@ -27,20 +29,22 @@ export function WhoWeAre() {
       {/* Bottom fade */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-[#0a0d12] via-[#0a0d12]/85 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[30%] bg-linear-to-t from-[#0a0d12] via-[#0a0d12]/85 to-transparent"
       />
 
       {/* Content */}
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-[4%] px-[clamp(24px,5.2vw,100px)] pb-[clamp(40px,8.5vh,96px)]">
         <div className="max-w-[44%]">
-          <p className="bg-gradient-to-b from-brand-cyan to-brand-blue bg-clip-text font-bold uppercase tracking-wide text-transparent text-[clamp(12px,1.05vw,20px)]">
-            quem somos
-          </p>
-          <h2 className="mt-[clamp(12px,1.4vw,24px)] font-bold leading-tight text-fog text-[clamp(30px,3.35vw,64px)]">
-            Software house
-            <br />
-            B2B com atuação nacional
-          </h2>
+          <SectionTitle
+            label="quem somos"
+            title={
+              <>
+                Software house
+                <br />
+                B2B com atuação nacional
+              </>
+            }
+          />
         </div>
 
         <div className="flex max-w-[36%] flex-col gap-[1em] leading-snug text-fog/90 text-[clamp(14px,1.5vw,28px)]">
