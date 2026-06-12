@@ -41,6 +41,14 @@ const CONTACTS: ContactCard[] = [
   },
 ]
 
+// Corner glow per card — each card lights a different corner (Figma Blur-Grande).
+const CARD_GLOWS = [
+  'bg-[radial-gradient(78%_125%_at_0%_0%,rgba(0,210,180,0.38),transparent_70%)]', // top-left
+  'bg-[radial-gradient(78%_125%_at_100%_0%,rgba(0,210,180,0.38),transparent_70%)]', // top-right
+  'bg-[radial-gradient(78%_125%_at_0%_100%,rgba(0,210,180,0.38),transparent_70%)]', // bottom-left
+  'bg-[radial-gradient(78%_125%_at_100%_100%,rgba(0,210,180,0.38),transparent_70%)]', // bottom-right
+]
+
 export function Contact() {
   return (
     <section className="relative flex h-screen w-full flex-col overflow-hidden">
@@ -95,18 +103,23 @@ export function Contact() {
 
       {/* Contact cards */}
       <div className="relative z-10 grid grid-cols-2 gap-[clamp(12px,1.5vw,24px)] px-[clamp(24px,5vw,100px)] pb-[clamp(24px,4vh,60px)] md:grid-cols-4">
-        {CONTACTS.map((c) => (
+        {CONTACTS.map((c, i) => (
           <a
             key={c.label}
             href={c.href}
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center gap-[clamp(10px,1vw,20px)] overflow-hidden rounded-lg border border-brand-blue bg-black/40 p-[clamp(14px,1.2vw,23px)] backdrop-blur-md transition-colors hover:border-brand-cyan"
+            className="group relative flex items-center gap-[clamp(10px,1vw,20px)] overflow-hidden rounded-lg border border-brand-blue bg-black/40 p-[clamp(14px,1.2vw,23px)] backdrop-blur-md transition-colors hover:border-brand-cyan"
           >
-            <span className="flex aspect-square w-[clamp(48px,5vw,98px)] shrink-0 items-center justify-center rounded-xl">
+            {/* Corner glow (different corner per card) */}
+            <span
+              aria-hidden="true"
+              className={`pointer-events-none absolute inset-0 ${CARD_GLOWS[i]}`}
+            />
+            <span className="relative z-10 flex aspect-square w-[clamp(48px,5vw,98px)] shrink-0 items-center justify-center rounded-xl">
               <img src={c.icon} alt="" aria-hidden="true" className="w-[71%]" />
             </span>
-            <span className="flex min-w-0 flex-col">
+            <span className="relative z-10 flex min-w-0 flex-col">
               <span className="font-bold leading-[1.437] text-fog text-[clamp(16px,1.5vw,16px)]">
                 {c.label}
               </span>
