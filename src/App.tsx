@@ -1,5 +1,6 @@
-import { Cover } from './sections/Cover'
-import { Letter } from './sections/Letter'
+import { Cover } from './sections/01-cover'
+import { Letter } from './sections/02-letter'
+import { Contact } from './sections/14-contact'
 
 function App() {
   return (
@@ -7,13 +8,7 @@ function App() {
       {/* Single page. Each <section> is a "session" of the presentation. */}
       <Cover />
       <Letter />
-
-      <section
-        id="section-3"
-        className="flex min-h-screen items-center justify-center p-8"
-      >
-        <h1 className="text-4xl font-bold">Sessão 3</h1>
-      </section>
+      <Contact />
     </main>
   )
 }
