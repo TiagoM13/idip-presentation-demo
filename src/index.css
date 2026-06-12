@@ -17,6 +17,7 @@
   --shadow-glow: 0 0 28.3px 0 rgb(33 186 125 / 0.16);
 
   --animate-slide-fade: slide-fade-in 700ms ease-out both;
+  --animate-card-wave: card-wave 14s ease-in-out infinite;
 
   @keyframes slide-fade-in {
     from {
@@ -26,6 +27,19 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* Slow drifting glow inside the cards (section 13) — reads as a soft wave. */
+  @keyframes card-wave {
+    0% {
+      transform: translate(-72%, -34%) scale(1.05);
+    }
+    50% {
+      transform: translate(-30%, -64%) scale(1.28);
+    }
+    100% {
+      transform: translate(-72%, -34%) scale(1.05);
     }
   }
 }
