@@ -77,9 +77,16 @@ export function Contact() {
 
       {/* Center: heading + subtitle */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-[5%] text-center">
-        <h2 className="font-ubuntu font-bold leading-none text-fog text-[clamp(44px,6.5vw,110px)] [text-shadow:0_0_40px_rgba(0,150,200,0.25)]">
-          Vamos conversar?
-        </h2>
+        <a
+          href="https://wa.me/5532988915909"
+          target="_blank"
+          rel="noreferrer"
+          className="group"
+        >
+          <h2 className="font-ubuntu font-bold leading-none text-fog text-[clamp(44px,6.5vw,110px)] transition-colors [text-shadow:0_0_40px_rgba(0,150,200,0.25)] group-hover:text-brand-cyan">
+            Vamos conversar!
+          </h2>
+        </a>
         <p className="mt-[clamp(12px,1.7vw,28px)] max-w-[62ch] font-light leading-[1.437] text-fog/60 text-[clamp(14px,1.55vw,28px)]">
           Agende um diagnóstico gratuito. Entendemos sua operação
           <br />e mostramos onde a tecnologia faz diferença real.
